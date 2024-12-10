@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculator</title>
+</head>
+<style>
+  body{
+    background: black;
+    color: navajowhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
+<body>
+  <h1 id="fst"></h1>
+  <h1 id="sec"></h1>
+  <h1 id="result"></h1>
+</body>
+<script>
+  let option = prompt('Select Operator :\n    1. Basic Arithematic(+ ,- ,* ,/ )\n    2. USDT to INR\n    3. X Power 2\n    4.Percentage for Marks')
+  let fst = document.getElementById('fst')
+  let sec = document.getElementById('sec')
+  let result = document.getElementById('result')
+  switch(option){
+    case'1':
+      let num1 = parseFloat(prompt('Enter The 1st Number'))
+      let num2 = parseFloat(prompt('Enter The 2nd Number'))
+      let operator = prompt('Select Operator(+ , - , * , /)')
+      switch(operator){
+        case'+':
+          fst.innerText = ('The 1st Number Is : '+num1)
+          sec.innerText = ('The 2nd Number Is : '+num2)
+          result.innerText = ('The Result is : '+(num1+num2))
+          break;
+        case '-':
+          fst.innerText = ('The 1st Number Is : ' + num1)
+          sec.innerText = ('The 2nd Number Is : ' + num2)
+          result.innerText = ('The Result is : ' + (num1 - num2))
+          break;
+        case'*':
+          fst.innerText = ('The 1st Number Is : ' + num1)
+          sec.innerText = ('The 2nd Number Is : ' + num2)
+          result.innerText = ('The Result is : ' + (num1 * num2))
+          break;
+        case'/':
+          fst.innerText = ('The 1st Number Is : ' + num1)
+          sec.innerText = ('The 2nd Number Is : ' + num2)
+          result.innerText = ('The Result is : ' + (num1 / num2))
+          break;
+        default: result.innerText=  ('Invilde Input')
+      }
+      break;
+    case'2':
+      let usdt = parseFloat(prompt('Enter USDT Qtn.'))
+      sec.innerText = ('The USDT Qtn. is : '+usdt)
+      result.innerText = ('The INR Value is : '+(84.1003*usdt))
+      break;
+    case'3':
+      let num = parseFloat(prompt('Enter a Number'))
+      sec.innerText = ('The Number is : '+num)
+      result.innerText = ('The Result is : '+(num*num))
+      break;
+    case'4':
+      let sm = parseFloat(prompt('Enter Secure Mark :'))
+      let fm = parseFloat(prompt('Enter Full Mark :'))
+      fst.innerText = ('Secure Marks is : '+sm)
+      sec.innerText = ('Full Marks is : '+fm)
+      result.innerText = ('Percentage is : '+(sm/fm)*100+'%')
+    break;
+   case'5':
+      let n = prompt('Enter a Number')
+      if(n==0){
+        console.log('ZERO')
+      }
+    default: result.innerText = ('Invilde Input')
+  }
+  
+</script>
+</html>
